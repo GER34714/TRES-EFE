@@ -311,22 +311,6 @@
       z-index: 1;
     }
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(95,132,196,0.12);
-      border: 1px solid rgba(154,183,234,0.22);
-      color: var(--primary-2);
-      font-size: 0.84rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
     .hero h1 {
       font-size: clamp(2.6rem, 5vw, 5rem);
       line-height: 0.95;
@@ -981,7 +965,6 @@
     <section class="hero section" id="inicio">
       <div class="container hero-grid">
         <div class="hero-copy reveal reveal-left">
-          <div class="hero-badge">Soluciones tecnicas con mirada integral</div>
           <h1>Arquitectura e <span>Ingenieria</span> con una presencia clara, profesional y bien presentada.</h1>
           <p>
             Una forma mas ordenada de mostrar quienes son, que servicios ofrecen y como trabajan. Una presentacion visual que transmite estructura, criterio y confianza desde el primer ingreso.
@@ -1270,7 +1253,6 @@
     const footer = document.getElementById("footer");
     const galleryMoreBtn = document.getElementById("galleryMoreBtn");
     const hiddenGallery = document.getElementById("hiddenGallery");
-    const revealItems = document.querySelectorAll(".reveal");
 
     function setTheme(mode) {
       if (mode === "light") {
