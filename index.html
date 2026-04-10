@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TRES EFE | Arquitectura e Ingenieria</title>
+  <meta name="description" content="Servicios de Arquitectura e Ingenieria. Proyectos, direccion, documentacion y soluciones tecnicas con una presentacion clara y profesional." />
+  <meta name="keywords" content="arquitectura, ingenieria, proyectos, direccion de obra, documentacion tecnica, tres efe" />
+  <meta name="author" content="Ciborg 347" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="TRES EFE | Arquitectura e Ingenieria" />
+  <meta property="og:description" content="Servicios de Arquitectura e Ingenieria con una presentacion profesional, clara y orientada a mostrar mejor cada area." />
+  <meta property="og:image" content="https://freeimage.host/i/BGYbPsa" />
+  <meta property="og:locale" content="es_AR" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TRES EFE | Arquitectura e Ingenieria" />
+  <meta name="twitter:description" content="Servicios de Arquitectura e Ingenieria con una presentacion profesional, clara y orientada a mostrar mejor cada area." />
+  <meta name="twitter:image" content="https://freeimage.host/i/BGYbPsa" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #08101c;
+      --bg-soft: #0f172a;
+      --card: rgba(15, 23, 42, 0.78);
+      --card-solid: #111c30;
+      --text: #e5edf8;
+      --muted: #aab7cc;
+      --line: rgba(255,255,255,0.1);
+      --primary: #5f84c4;
+      --primary-2: #9ab7ea;
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius: 24px;
+    }
+
+    body.light-mode {
+      --bg: #edf2f8;
+      --bg-soft: #ffffff;
+      --card: rgba(255,255,255,0.9);
+      --card-solid: #ffffff;
+      --text: #122033;
+      --muted: #5b6c82;
+      --line: rgba(10,20,40,0.08);
+      --primary: #466da9;
+      --primary-2: #7f9fd3;
+      --shadow: 0 20px 50px rgba(17,24,39,0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(95,132,196,0.16), transparent 32%),
+        radial-gradient(circle at top right, rgba(154,183,234,0.12), transparent 28%),
+        linear-gradient(180deg, var(--bg) 0%, #0a1322 50%, var(--bg) 100%);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    body.light-mode {
+      background:
+        radial-gradient(circle at top left, rgba(95,132,196,0.12), transparent 32%),
+        radial-gradient(circle at top right, rgba(154,183,234,0.12), transparent 28%),
+        linear-gradient(180deg, #eef3f9 0%, #f7faff 50%, #edf2f8 100%);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 92px 0;
+      position: relative;
+    }
+
+    .section-header {
+      max-width: 780px;
+      margin-bottom: 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--primary-2);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      margin-bottom: 14px;
+      letter-spacing: -0.04em;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.75;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      background: rgba(8, 16, 28, 0.7);
+      border-bottom: 1px solid var(--line);
+    }
+
+    body.light-mode .site-header {
+      background: rgba(255,255,255,0.78);
+    }
+
+    .nav-wrap {
+      height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(95,132,196,0.18), rgba(154,183,234,0.08));
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-text span {
+      color: var(--muted);
+      font-size: 0.87rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .theme-toggle,
+    .menu-toggle {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    body.light-mode .theme-toggle,
+    body.light-mode .menu-toggle {
+      background: rgba(10,20,40,0.03);
+    }
+
+    .theme-toggle:hover,
+    .menu-toggle:hover {
+      transform: translateY(-2px);
+      border-color: rgba(95,132,196,0.5);
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--text);
+      display: block;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 16px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 0.97rem;
+      transition: 0.25s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: #fff;
+      box-shadow: 0 14px 34px rgba(95,132,196,0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.04);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.03);
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    body.light-mode .btn-secondary {
+      background: rgba(10,20,40,0.03);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      border-color: rgba(95,132,196,0.5);
+    }
+
+    .hero {
+      padding: 54px 0 34px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(95,132,196,0.12);
+      border: 1px solid rgba(154,183,234,0.22);
+      color: var(--primary-2);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 5vw, 5.2rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      margin-bottom: 18px;
+      max-width: 760px;
+    }
+
+    .hero h1 span {
+      color: var(--primary-2);
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.85;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .point {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    body.light-mode .point {
+      background: rgba(255,255,255,0.78);
+    }
+
+    .point strong {
+      display: block;
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+      letter-spacing: -0.03em;
+    }
+
+    .point span {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .hero-media {
+      position: relative;
+    }
+
+    .hero-card {
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      min-height: 580px;
+      position: relative;
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: auto 20px 20px 20px;
+      padding: 22px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(8,16,28,0.2), rgba(8,16,28,0.82));
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-overlay strong {
+      display: block;
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-overlay p {
+      margin: 0;
+      color: #d9e4f6;
+      font-size: 0.96rem;
+      line-height: 1.7;
+      max-width: unset;
+    }
+
+    .about-grid,
+    .service-detail,
+    .contact-grid,
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .panel,
+    .image-card,
+    .service-banner,
+    .contact-card,
+    .cta-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel,
+    .contact-card,
+    .cta-card {
+      padding: 34px;
+    }
+
+    .image-card img,
+    .service-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .panel h3,
+    .contact-card h3,
+    .cta-card h3,
+    .service-copy h3 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      margin-bottom: 16px;
+    }
+
+    .panel p,
+    .service-copy p,
+    .contact-card p,
+    .cta-card p {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+
+    .features {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+    }
+
+    body.light-mode .feature {
+      background: rgba(10,20,40,0.02);
+    }
+
+    .feature .icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      background: rgba(95,132,196,0.12);
+      color: var(--primary-2);
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.98rem;
+    }
+
+    .feature span {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.94rem;
+    }
+
+    .service-block {
+      display: grid;
+      gap: 26px;
+      margin-top: 34px;
+    }
+
+    .service-banner {
+      min-height: 340px;
+    }
+
+    .service-detail {
+      align-items: stretch;
+    }
+
+    .service-copy {
+      padding: 34px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .service-copy ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .service-copy li {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      color: var(--text);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      line-height: 1.55;
+    }
+
+    body.light-mode .service-copy li {
+      background: rgba(10,20,40,0.02);
+    }
+
+    .service-copy li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      margin-top: 7px;
+      border-radius: 999px;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow: 0 0 0 4px rgba(95,132,196,0.12);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-item {
+      position: relative;
+      min-height: 300px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      inset: auto 16px 16px 16px;
+      padding: 16px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(8,16,28,0.14), rgba(8,16,28,0.82));
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .gallery-caption strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+
+    .gallery-caption span {
+      color: #dce8fb;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .contact-card .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      transition: 0.25s ease;
+    }
+
+    body.light-mode .contact-link {
+      background: rgba(10,20,40,0.02);
+    }
+
+    .contact-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(95,132,196,0.4);
+    }
+
+    .contact-link strong {
+      display: block;
+      font-size: 0.98rem;
+      margin-bottom: 4px;
+    }
+
+    .contact-link span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .cta-card {
+      background: linear-gradient(135deg, rgba(95,132,196,0.18), rgba(154,183,234,0.08)), var(--card);
+    }
+
+    .site-footer {
+      padding: 28px 0 44px;
+      border-top: 1px solid var(--line);
+      position: relative;
+      z-index: 3;
+    }
+
+    .footer-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-wrap p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    .footer-wrap a {
+      color: var(--primary-2);
+      font-weight: 700;
+    }
+
+    .floating-wa {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 60px;
+      height: 60px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #25d366;
+      box-shadow: 0 18px 32px rgba(37,211,102,0.35);
+      z-index: 900;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      border: 2px solid rgba(255,255,255,0.18);
+    }
+
+    .floating-wa:hover {
+      transform: translateY(-3px);
+    }
+
+    .floating-wa svg {
+      width: 30px;
+      height: 30px;
+      fill: #fff;
+    }
+
+    .floating-wa.hide-near-footer {
+      opacity: 0;
+      transform: translateY(20px);
+      pointer-events: none;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .about-grid,
+      .service-detail,
+      .contact-grid,
+      .cta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        min-height: 460px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 880px) {
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 16px;
+        right: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        background: var(--card-solid);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 16px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 12px 10px;
+        border-radius: 12px;
+      }
+
+      .nav-links a:hover {
+        background: rgba(255,255,255,0.04);
+      }
+
+      body.light-mode .nav-links a:hover {
+        background: rgba(10,20,40,0.03);
+      }
+
+      .hero-points {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 20px, 1180px);
+      }
+
+      .section {
+        padding: 74px 0;
+      }
+
+      .hero {
+        padding-top: 34px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.2rem, 11vw, 3.4rem);
+      }
+
+      .hero p,
+      .section-header p,
+      .panel p,
+      .service-copy p,
+      .contact-card p,
+      .cta-card p {
+        font-size: 0.97rem;
+        line-height: 1.75;
+      }
+
+      .hero-card {
+        min-height: 360px;
+      }
+
+      .panel,
+      .contact-card,
+      .cta-card,
+      .service-copy {
+        padding: 24px;
+        border-radius: 22px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item {
+        min-height: 260px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .footer-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .floating-wa {
+        width: 56px;
+        height: 56px;
+        right: 14px;
+        bottom: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#inicio" class="brand" aria-label="Ir al inicio">
+        <div class="brand-mark">
+          <img src="https://freeimage.host/i/BGYbPsa" alt="Logo TRES EFE" />
+        </div>
+        <div class="brand-text">
+          <strong>TRES EFE</strong>
+          <span>Arquitectura e Ingenieria</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#ingenieria">Ingenieria</a>
+        <a href="#arquitectura">Arquitectura</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+          <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 0 1 11.21 3c0 .34-.03.68-.08 1.01A9 9 0 1 0 20 12.87c.34-.05.68-.08 1-.08Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="hero-badge">Soluciones tecnicas con mirada integral</div>
+          <h1>Arquitectura e <span>Ingenieria</span> con una presencia clara, profesional y bien presentada.</h1>
+          <p>
+            Una forma mas ordenada de mostrar quienes son, que servicios ofrecen y como trabajan. Una presentacion visual que transmite estructura, criterio y confianza desde el primer ingreso.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contacto" class="btn btn-primary">Solicitar informacion</a>
+            <a href="#servicios" class="btn btn-secondary">Ver servicios</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="point">
+              <strong>Presentacion clara</strong>
+              <span>La informacion se muestra de forma mas ordenada y facil de entender.</span>
+            </div>
+            <div class="point">
+              <strong>Imagen profesional</strong>
+              <span>Una presencia visual alineada al perfil tecnico y corporativo del estudio.</span>
+            </div>
+            <div class="point">
+              <strong>Servicios separados</strong>
+              <span>Arquitectura e Ingenieria bien diferenciadas para comunicar mejor cada area.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-card">
+            <img src="https://freeimage.host/i/BGYbPsa" alt="Vista aerea y marca TRES EFE" />
+            <div class="hero-overlay">
+              <strong>TRES EFE</strong>
+              <p>Servicios de Arquitectura e Ingenieria con una presentacion firme, moderna y alineada al perfil del estudio.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="nosotros">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Nosotros</div>
+          <h2>Un equipo que acompaña cada etapa con criterio tecnico y presencia en obra.</h2>
+          <p>
+            Mostrar al equipo, el trabajo real y el contexto de ejecucion ayuda a transmitir experiencia, seriedad y respaldo. Esta seccion refuerza la confianza y acerca la estructura del estudio a quien consulta.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="image-card">
+            <img src="https://freeimage.host/i/BGYbFN1" alt="Equipo de TRES EFE en obra" />
+          </div>
+
+          <div class="panel">
+            <h3>Quienes somos</h3>
+            <p>
+              TRES EFE trabaja integrando Arquitectura e Ingenieria para dar respuestas mas completas, ordenadas y funcionales. La combinacion entre planificacion, analisis tecnico y seguimiento de obra permite encarar cada proyecto con una mirada mas solida.
+            </p>
+            <p>
+              Esta presentacion busca reflejar esa forma de trabajo: claridad, estructura, imagen profesional y una comunicacion directa de los servicios.
+            </p>
+
+            <div class="features">
+              <div class="feature">
+                <div class="icon">01</div>
+                <div>
+                  <strong>Mirada integral</strong>
+                  <span>Una propuesta donde el enfoque tecnico y proyectual conviven con criterio y coherencia.</span>
+                </div>
+              </div>
+
+              <div class="feature">
+                <div class="icon">02</div>
+                <div>
+                  <strong>Presencia en campo</strong>
+                  <span>Imagenes reales que refuerzan el trabajo concreto, el seguimiento y la cercania con la obra.</span>
+                </div>
+              </div>
+
+              <div class="feature">
+                <div class="icon">03</div>
+                <div>
+                  <strong>Comunicacion profesional</strong>
+                  <span>Servicios explicados con mas orden para que el potencial cliente entienda mejor lo que hacen.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Servicios</div>
+          <h2>Dos areas bien diferenciadas para mostrar mejor el alcance del estudio.</h2>
+          <p>
+            Separar Arquitectura e Ingenieria ordena la lectura, mejora la percepcion profesional y permite que cada servicio tenga su propio espacio dentro de la presentacion.
+          </p>
+        </div>
+
+        <div class="service-block" id="ingenieria">
+          <div class="service-banner">
+            <img src="https://freeimage.host/i/BGYDX6v" alt="Portada de servicios de Ingenieria" />
+          </div>
+
+          <div class="service-detail">
+            <div class="service-copy">
+              <h3>Ingenieria</h3>
+              <p>
+                Una seccion pensada para exponer servicios tecnicos con mayor claridad, reforzando el valor profesional del area y haciendo mas facil entender el alcance de cada prestacion.
+              </p>
+
+              <ul>
+                <li>Analisis, planificacion y desarrollo tecnico con una presentacion mas clara para quien consulta.</li>
+                <li>Mayor orden al mostrar procesos, alcance y tipo de servicio dentro del area de ingenieria.</li>
+                <li>Una forma mas solida de comunicar experiencia, estructura y criterio tecnico.</li>
+              </ul>
+            </div>
+
+            <div class="image-card">
+              <img src="https://freeimage.host/i/BGYm9Xn" alt="Descripcion de servicios de Ingenieria" />
+            </div>
+          </div>
+        </div>
+
+        <div class="service-block" id="arquitectura">
+          <div class="service-banner">
+            <img src="https://freeimage.host/i/BGYpJTP" alt="Portada de servicios de Arquitectura" />
+          </div>
+
+          <div class="service-detail">
+            <div class="service-copy">
+              <h3>Arquitectura</h3>
+              <p>
+                Un bloque orientado a mostrar el lado proyectual, visual y funcional del estudio, con una presentacion mas prolija de cada servicio y una imagen mejor organizada para el cliente.
+              </p>
+
+              <ul>
+                <li>Espacio para presentar proyectos, asesoramiento y soluciones arquitectonicas de forma mas profesional.</li>
+                <li>Mejor lectura visual para quien busca conocer que hacen y como pueden ayudarlo.</li>
+                <li>Una estructura que acompaña la imagen de marca y suma claridad a la propuesta general.</li>
+              </ul>
+            </div>
+
+            <div class="image-card">
+              <img src="https://freeimage.host/i/BGYpTZX" alt="Descripcion de servicios de Arquitectura" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="galeria">
+      <div class="container">
+        <div class="section-header">
+          <div class="eyebrow">Galeria</div>
+          <h2>Una seleccion visual que acompaña la identidad del estudio y ordena mejor su presentacion.</h2>
+          <p>
+            Las piezas elegidas funcionan como soporte visual del recorrido. Refuerzan marca, muestran equipo y separan con claridad cada area de servicio.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="gallery-item">
+            <img src="https://freeimage.host/i/BGYbPsa" alt="Marca TRES EFE sobre vista aerea" />
+            <div class="gallery-caption">
+              <strong>Identidad visual</strong>
+              <span>Una apertura fuerte para dar presencia y estructura desde el inicio.</span>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <img src="https://freeimage.host/i/BGYbFN1" alt="Equipo de trabajo en obra" />
+            <div class="gallery-caption">
+              <strong>Equipo y obra</strong>
+              <span>Imagen que transmite cercania, seguimiento y trabajo real en campo.</span>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <img src="https://freeimage.host/i/BGYDX6v" alt="Placa de Ingenieria" />
+            <div class="gallery-caption">
+              <strong>Area de Ingenieria</strong>
+              <span>Separador visual para presentar el bloque tecnico del estudio.</span>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <img src="https://freeimage.host/i/BGYm9Xn" alt="Servicios de Ingenieria" />
+            <div class="gallery-caption">
+              <strong>Servicios tecnicos</strong>
+              <span>Placa descriptiva que acompaña y ordena la comunicacion del area.</span>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <img src="https://freeimage.host/i/BGYpJTP" alt="Placa de Arquitectura" />
+            <div class="gallery-caption">
+              <strong>Area de Arquitectura</strong>
+              <span>Bloque visual para diferenciar la propuesta proyectual del estudio.</span>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <img src="https://freeimage.host/i/BGYpTZX" alt="Servicios de Arquitectura" />
+            <div class="gallery-caption">
+              <strong>Servicios proyectuales</strong>
+              <span>Una forma mas clara de mostrar alcance, enfoque y presentacion del area.</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <div class="eyebrow">Contacto</div>
+          <h3>Una presentacion mas clara para dar el siguiente paso.</h3>
+          <p>
+            Esta demo esta pensada para mostrar una forma mas ordenada y profesional de presentar el estudio, sus areas y sus servicios. El objetivo es que la informacion se entienda mejor y la imagen general transmita mas estructura.
+          </p>
+
+          <div class="contact-list">
+            <a class="contact-link" href="https://www.instagram.com/tresefe_ingyarq/" target="_blank" rel="noopener noreferrer">
+              <div>
+                <strong>Instagram</strong>
+                <span>@tresefe_ingyarq</span>
+              </div>
+              <span>Ver perfil</span>
+            </a>
+
+            <a class="contact-link" href="mailto:contacto@tresefe.com">
+              <div>
+                <strong>Email</strong>
+                <span>contacto@tresefe.com</span>
+              </div>
+              <span>Escribir</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="cta-card">
+          <div class="eyebrow">Presentacion</div>
+          <h3>Arquitectura e Ingenieria en un formato visual mas firme, claro y profesional.</h3>
+          <p>
+            Una web como esta permite separar mejor cada servicio, mostrar una identidad visual mas prolija y dar una base mas clara para futuras consultas, presentaciones o crecimiento de la marca.
+          </p>
+          <a href="https://www.instagram.com/tresefe_ingyarq/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ir al Instagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="footer">
+    <div class="container footer-wrap">
+      <p>TRES EFE | Arquitectura e Ingenieria</p>
+      <p>Creado y diseñado por <a href="https://ciborg347oficial.onrender.com" target="_blank" rel="noopener noreferrer">Ciborg 347</a></p>
+    </div>
+  </footer>
+
+  <a class="floating-wa" id="floatingWa" href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M13.601 2.326A7.854 7.854 0 0 0 8.004 0C3.58 0 .004 3.574.004 7.98c0 1.41.37 2.786 1.074 3.999L0 16l4.137-1.064a8.01 8.01 0 0 0 3.867.987h.003c4.423 0 8-3.575 8-7.98a7.93 7.93 0 0 0-2.406-5.617zM8.007 14.55a6.61 6.61 0 0 1-3.372-.92l-.242-.144-2.454.63.655-2.39-.157-.246a6.54 6.54 0 0 1-1.013-3.5c.002-3.61 2.963-6.548 6.589-6.548a6.55 6.55 0 0 1 4.66 1.93 6.5 6.5 0 0 1 1.93 4.618c-.002 3.61-2.964 6.57-6.596 6.57zm3.614-4.926c-.198-.099-1.173-.578-1.355-.643-.181-.066-.313-.099-.445.099-.132.198-.511.643-.627.776-.115.132-.231.148-.429.05-.198-.1-.836-.308-1.592-.982-.588-.524-.985-1.17-1.1-1.368-.116-.198-.012-.305.087-.404.09-.089.198-.231.297-.347.099-.115.132-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.445-1.07-.61-1.465-.161-.387-.325-.334-.445-.34h-.38c-.132 0-.347.05-.528.248s-.694.677-.694 1.652.71 1.916.809 2.048c.099.132 1.397 2.13 3.386 2.987.473.204.842.326 1.13.417.475.151.907.13 1.248.079.38-.057 1.173-.479 1.338-.942.165-.462.165-.858.115-.942-.049-.082-.181-.132-.38-.231z"/>
+    </svg>
+  </a>
+
+  <script>
+    const body = document.body;
+    const themeToggle = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    const floatingWa = document.getElementById("floatingWa");
+    const footer = document.getElementById("footer");
+
+    function setTheme(mode) {
+      if (mode === "light") {
+        body.classList.add("light-mode");
+        localStorage.setItem("tresEfeTheme", "light");
+        themeIcon.innerHTML = '<path d="M12 3V1m0 22v-2m9-9h2M1 12h2m15.364 6.364 1.414 1.414M3.222 3.222l1.414 1.414m12.728 0 1.414-1.414M3.222 20.778l1.414-1.414M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>';
+      } else {
+        body.classList.remove("light-mode");
+        localStorage.setItem("tresEfeTheme", "dark");
+        themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 0 1 11.21 3c0 .34-.03.68-.08 1.01A9 9 0 1 0 20 12.87c.34-.05.68-.08 1-.08Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>';
+      }
+    }
+
+    const savedTheme = localStorage.getItem("tresEfeTheme");
+    setTheme(savedTheme === "light" ? "light" : "dark");
+
+    themeToggle.addEventListener("click", () => {
+      const isLight = body.classList.contains("light-mode");
+      setTheme(isLight ? "dark" : "light");
+    });
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => navLinks.classList.remove("open"));
+    });
+
+    function handleWaVisibility() {
+      if (!footer || !floatingWa) return;
+      const footerRect = footer.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      if (footerRect.top < windowHeight - 40) {
+        floatingWa.classList.add("hide-near-footer");
+      } else {
+        floatingWa.classList.remove("hide-near-footer");
+      }
+    }
+
+    window.addEventListener("scroll", handleWaVisibility);
+    window.addEventListener("resize", handleWaVisibility);
+    handleWaVisibility();
+  </script>
+</body>
+</html>
